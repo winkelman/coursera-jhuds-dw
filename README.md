@@ -16,4 +16,4 @@ There are 3 different R scripts in this repository:
 - `inspect_data.R` used to inspect the format of the features data
 - `run_analysis.R` used to create the tidy dataset
 
-To recreate the tidy dataset, clone this repository and run the `run_analysis.R` from the command line (with `Rscript run_analysis.R`) or from the R console.
+To recreate the tidy dataset, clone this repository and run the `run_analysis.R` script from the command line (with `Rscript run_analysis.R`) or from the R console.
