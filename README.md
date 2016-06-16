@@ -12,7 +12,7 @@ The dataset used is the "Human Activity Recognition Using Smartphones Data Set" 
 > For each record it is provided:
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 - Triaxial Angular velocity from the gyroscope.
-- A 561-feature vector with time and frequency domain variables. 
+- A 561-feature vector with time and frequency domain variables.
 - Its activity label.
 - An identifier of the subject who carried out the experiment.
 
@@ -31,4 +31,4 @@ There are 3 different R scripts in this repository:
 
 To recreate the tidy dataset, clone this repository and run the `run_analysis.R` script from the command line (with `Rscript run_analysis.R`) or from the R console.
 
-The `code-book.md` file contains the code book for the raw data used as well as a brief description of the variables in the tidy dataset.
+The `code-book.md` file contains the code book for the raw data as well as a brief description of the variables in the tidy dataset.

@@ -61,7 +61,7 @@ tBodyGyroJerkMean
 
 #### Tidy Data
 
-The first 2 features are used to identify each subject and the activity done when the precise measurements were taken with either the accelerometer or gyroscope:
+The tidy dataset contains 180 observations of 88 features.  The first 2 features are used to identify each subject and the activity done when the precise measurements were taken with either the accelerometer or gyroscope:
 
 - "subject_number" -  the unique identifier for each subject in the experiment
 - "activity_name" - the name of the activity for which the other measurements were taken
