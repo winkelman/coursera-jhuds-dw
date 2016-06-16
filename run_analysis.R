@@ -67,9 +67,11 @@ df_activities <- read_table("uci-har-data/activity_labels.txt",
 # separate features and subject/labels from dataframe to match activity names
 df_features <- df_mean_and_std[, 3:ncol(df_mean_and_std)]
 df_subjects_and_labels <- df_mean_and_std[, 1:2]
+# join activity numbers with activity names
 df_subjects_and_labels <- left_join(df_subjects_and_labels, df_activities,
                                     by = "activity_number")
 df_subjects_and_labels <- df_subjects_and_labels[, -2]
+# re-bind data
 df_labels <- bind_cols(df_subjects_and_labels, df_features)
 rm(df_features); rm(df_subjects_and_labels); rm(df_activities)
 rm(df_complete); rm(df_mean_and_std)
@@ -79,17 +81,18 @@ rm(df_complete); rm(df_mean_and_std)
 ##4 Label the data set with descriptive variable names.
 
 column_names <- names(df_labels)
+# remove row numbers, dashes, parenthesis, and capitalization
 column_names <- gsub("[0-9]+( )+", "", column_names)
 column_names <- gsub("-", "_", column_names)
 column_names <- gsub("[()]", "_", column_names)
 column_names <- tolower(column_names)
-
+# expand time, frequency, acceleration, gyroscope, and magnitude
 column_names <- gsub("^t", "time_", column_names)
 column_names <- gsub("^f", "freq_", column_names)
 column_names <- gsub("acc", "_acceleration_", column_names)
 column_names <- gsub("gyro", "_gyroscope_", column_names)
 column_names <- gsub("mag", "_magnitude_", column_names)
-
+# remove duplicate 'body', trailing underscore, commas, and additional underscores
 column_names <- gsub("bodybody", "body", column_names)
 column_names <- gsub("_+$", "", column_names)
 column_names <- gsub(",", "_", column_names)
