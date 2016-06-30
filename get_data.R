@@ -23,15 +23,15 @@ get_uci_har_data <- function() {
         
     } else if (file.exists(file_name)) {
         
-        unzip("uci-har-data.zip")
-        file.rename("UCI HAR Dataset", "uci-har-data")
+        unzip(file_name)
+        file.rename(default_extraction_path, renamed_path)
         
     } else {
         
-        download.file(file_url, "uci-har-data.zip")
-        unzip("uci-har-data.zip")
-        file.rename("UCI HAR Dataset", "uci-har-data")
-        #file.remove("uci-har-data.zip")
+        download.file(file_url, file_name)
+        unzip(file_name)
+        file.rename(default_extraction_path, renamed_path)
+        #file.remove(file_name)
     }
     
 }
